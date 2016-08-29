@@ -1,0 +1,24 @@
+.234567890123456789
+COMP1    START   0
+         LDA     #7
+         STA     P
+         LDA     #6
+   lda 15
+    lda -14
+         STA     Q
+         COMP    P
+         JLT     THEN
+         LDA     #10
+         STA     P
+         LDA     #20
+         STA     Q
+         J       OUT
+THEN     LDA     #1
+         STA     P
+         LDA     #2
+         STA     Q
+OUT      J       OUT
+P        RESW    1
+Q        RESW    1
+         END     
+         

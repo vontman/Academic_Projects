@@ -1,0 +1,38 @@
+0	p                             START   0000
+0	         LDX                            #0
+3	         LDT               MAXLEN
+6	         LDCH    CHAR
+9	         RMO     A,S
+b	LOOP     LDCH    STR,X
+e	         COMPR   A,S
+10	         JEQ                 OUT
+13	         TIXR    T
+15	         JLT     LOOP
+.         LDA     =X'FFFFFF'
+18	lda memory,x
+1b	MEMORY              WORD                  1,2
+1e	MEMORY2              WORD                  1,2,2 
+0	MEMORY3              WORD                  1,2 ,3 , 4
+Error: Invalid Instruction
+
+21	LDA          MEMORY,         X
+24	         J       *
+27	         SHIFTL  A,3
+29	OUT      LDA     #STR
+2c	         ADDR    X,A
+2e	EXIT     J       EXIT
+31	STR      BYTE    C'a b c d'
+38	CHAR     BYTE    C'd'
+39	MAXLEN   WORD    7
+3c	         END     p
+
+***symbol table:
+0	p                             
+b	loop     
+1b	memory              
+1e	memory2              
+29	out      
+2e	exit     
+31	str      
+38	char     
+39	maxlen   

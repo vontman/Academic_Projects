@@ -1,0 +1,17 @@
+.23456789012345678901234567890
+progr1   start   0100
+P        LDA     Z
+         SUB     Y
+         STA     BETA
+         LDA     V
+         ADD     W
+         DIV     BETA
+BETA LDA BETA
+         STA     E
+Z        WORD    3 
+Y        WORD    4
+BETA     RESW    1
+V        WORD    5
+W        WORD    8
+E        RESW    1
+         END     P

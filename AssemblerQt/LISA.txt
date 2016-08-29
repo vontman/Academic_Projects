@@ -1,0 +1,33 @@
+.234567890123456789
+0	COMP1    START   0
+0	         LDA     #7
+3	         STA     P
+6	         LDA     #6
+9	   lda 15
+0	    lda -14
+Error: Invalid Instruction
+
+c	         STA     Q
+f	         COMP    P
+12	         JLT     THEN
+15	         LDA     #10
+18	         STA     P
+1b	         LDA     #20
+1e	         STA     Q
+21	         J       OUT
+24	THEN     LDA     #1
+27	         STA     P
+2a	         LDA     #2
+2d	         STA     Q
+30	OUT      J       OUT
+33	P        RESW    1
+36	Q        RESW    1
+39	         END     
+         
+
+***symbol table:
+0	comp1    
+24	then     
+30	out      
+33	p        
+36	q        

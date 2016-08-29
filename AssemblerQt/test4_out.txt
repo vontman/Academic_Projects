@@ -1,0 +1,29 @@
+.234567890123456789
+0	COMP1    START   0
+0	         LDA     #7
+3	         STA     P
+6	         LDA     #6
+9	         STA     Q
+c	         COMP    P
+f	         JLT     THEN
+12	         LDA     #10
+15	         STA     P
+18	         LDA     #20
+1b	         STA     Q
+1e	         J       OUT
+21	THEN     LDA     #1
+24	         STA     P
+27	         LDA     #2
+2a	         STA     Q
+2d	OUT      J       OUT
+30	P        RESW    1
+33	Q        RESW    1
+36	         END     
+         
+
+***symbol table:
+0	comp1
+21	then
+2d	out
+30	p
+33	q
